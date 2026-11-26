@@ -14,7 +14,9 @@
 
 <!-- Replace the placeholder URL below with assets/images/robot-hero.jpg after uploading your photograph. -->
 <p align="center">
-  <img src="https://placehold.co/1200x650/182431/E2E8F0.png?text=Self-Balancing+Robot%0AProject+Photograph" alt="Self-balancing robot prototype — photograph placeholder" width="850">
+  <img src="images/cover.PNG" alt="Self-Balancing Robot" width="800">
+  <br>
+  <em>Figure 1. ESP32-based self-balancing robot prototype.</em>
 </p>
 
 <p align="center"><em>Two-wheeled robotic platform for real-time orientation estimation and closed-loop stabilization.</em></p>

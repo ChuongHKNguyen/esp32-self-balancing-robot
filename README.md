@@ -162,26 +162,6 @@ The signed control output is mapped to motor direction and PWM magnitude, subjec
 These are historical development settings, not validated optimal gains. Their effective units and PWM scale depend on the final implementation. Confirm values against the current firmware before use.
 
 
-## Web Dashboard
-
-<p align="center">
-  <img src="https://placehold.co/1100x600/182431/E2E8F0.png?text=ESP32+Web+Dashboard%0AScreenshot+Placeholder" alt="Web dashboard screenshot placeholder" width="850">
-</p>
-
-<!-- Replace the placeholder with assets/images/dashboard.png. -->
-
-The embedded web interface is intended to display orientation readings and provide adjustment of PID gains during development.
-
-| Network parameter | Previous configuration |
-|---|---|
-| Wi-Fi mode | Access point |
-| SSID | `ESP32_BALANCE` |
-| Development password | `12345678` |
-| Dashboard address | `http://192.168.4.1` |
-
-Confirm the network settings in the actual sketch. Change the default password before use in shared environments. The dashboard should not be treated as a safety-critical emergency-stop interface.
-
-
 ## Getting Started
 
 ### Prerequisites
@@ -190,8 +170,6 @@ Confirm the network settings in the actual sketch. Change the default password b
 - Espressif ESP32 Arduino board package.
 - USB data cable and appropriate USB-to-serial driver, if required by the development board.
 - Any additional IMU or networking libraries imported by the final sketch.
-
-### Installation
 
 ### Installation
 

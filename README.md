@@ -54,11 +54,9 @@ This project develops a two-wheeled self-balancing robot based on the ESP32 micr
 
 - ESP32-based embedded control using Arduino C/C++.
 - Six-axis accelerometer and gyroscope measurements from the MPU6500.
-- IMU calibration and orientation offset compensation.
 - Closed-loop PID stabilization with bidirectional PWM motor control.
 - ESP32 Wi-Fi access point and browser-based monitoring interface.
 - Adjustable PID gains through the web dashboard.
-- Target control-loop frequency of 100 Hz, subject to timing validation.
 
 ## System Architecture
 

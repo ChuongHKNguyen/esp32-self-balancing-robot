@@ -14,7 +14,7 @@
 
 <!-- Replace the placeholder URL below with assets/images/robot-hero.jpg after uploading your photograph. -->
 <p align="center">
-  <img src="images/cover.PNG" alt="Self-Balancing Robot" width="800">
+  <img src="images/cover.PNG" alt="Self-Balancing Robot" width="400">
   <br>
   <em>Figure 1. ESP32-based self-balancing robot prototype.</em>
 </p>

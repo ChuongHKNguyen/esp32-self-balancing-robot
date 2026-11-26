@@ -193,20 +193,29 @@ Confirm the network settings in the actual sketch. Change the default password b
 
 ### Installation
 
-1. Clone or download the repository from GitHub. After publishing, replace `YOUR_GITHUB_USERNAME` in the example below:
+### Installation
 
-   ```bash
-   git clone https://github.com/YOUR_GITHUB_USERNAME/esp32-self-balancing-robot.git
-   cd esp32-self-balancing-robot
-   ```
+1. Install [Arduino IDE](https://www.arduino.cc/en/software) and the ESP32 board package by Espressif Systems.
 
-2. Open `firmware/self_balancing_robot/self_balancing_robot.ino` in Arduino IDE.
-3. Install the ESP32 board package and any dependencies required by the sketch.
-4. Select the board profile appropriate to the ESP32 development board (commonly `ESP32 Dev Module`) and the correct serial port.
-5. Verify pin assignments, IMU orientation, motor polarity and power connections.
-6. Compile and upload the firmware with motor power disconnected.
-7. Verify stationary IMU readings and calibration before enabling the motor supply.
-8. Connect to the configured ESP32 Wi-Fi network and open the dashboard address in a browser.
+2. Clone or download this repository:
+
+   ```bash
+   git clone https://github.com/ChuongHKNguyen/esp32-self-balancing-robot.git
+   ```
+
+3. Copy the files from `software/` into a folder named `balance_turn`:
+
+   ```text
+   balance_turn/
+   ├── balance_turn.ino
+   ├── Fuzzy_pid.h
+   └── web_ui_balance_turn.h
+   ```
+
+4. Open `balance_turn.ino` in Arduino IDE.
+5. Select **ESP32 Dev Module** and the corresponding COM port.
+6. Install any required library dependencies, compile and upload the firmware.
+7. Open the Serial Monitor to verify initialization.
 
 ### Initial operation and tuning
 
@@ -217,27 +226,6 @@ Confirm the network settings in the actual sketch. Change the default password b
 5. Tune proportional gain gradually, then derivative gain to improve damping. Introduce integral action only if necessary and with appropriate anti-windup protection.
 6. Verify motor cutoff behavior, sensor fault response and output limits before attempting free-standing balance.
 7. Perform controlled balancing trials in a clear area with a suitable support or restraint.
-
-## Engineering Considerations and Limitations
-
-- **Mechanical dynamics:** Centre of mass, wheel diameter, gearbox backlash, friction and mass distribution influence balancing behavior.
-- **Motor driver:** The L298N's voltage drop and thermal performance can limit available motor torque and efficiency.
-- **Sensor estimation:** Vibration, acceleration and mounting alignment may affect orientation accuracy.
-- **Timing:** Wi-Fi and web-server activity must not introduce excessive control-loop latency or jitter.
-- **Position control:** Tilt stabilization alone does not guarantee that the robot maintains a fixed ground position. Wheel-speed or position feedback would be needed for more advanced control.
-- **Safety:** Output saturation, integral windup, sensor failure and excessive tilt need explicit handling. Their implementation has not been verified in the current firmware.
-
-## Development Roadmap
-
-- [ ] Publish the current Arduino firmware and record dependency versions.
-- [ ] Document the final wiring schematic and mechanical specifications.
-- [ ] Validate IMU calibration and balancing-axis orientation.
-- [ ] Verify safe motor direction, output limits and fault cutoff.
-- [ ] Tune PID gains and establish repeatable balancing tests.
-- [ ] Measure control-loop timing under Wi-Fi traffic.
-- [ ] Publish experimental plots and demonstration videos.
-- [ ] Investigate encoder-based velocity and position feedback, if supported by the motors.
-- [ ] Evaluate alternative control strategies and more efficient motor drivers.
 
 ## References
 
@@ -263,16 +251,3 @@ A project license has not yet been selected. Add the appropriate `LICENSE` file 
 ---
 
 <p align="center"><sub>Designed and developed as a hands-on investigation of embedded robotic stabilization.</sub></p>
-
-<!--
-PUBLISHING CHECKLIST (not visible in rendered README)
-- Replace YOUR_NAME, YOUR_GITHUB_USERNAME, YOUR_LINKEDIN_ID, YOUR_CHANNEL and YOUR_VIDEO_ID.
-- Upload your images and replace all placehold.co URLs with relative paths to the corresponding assets.
-- Replace the video placeholder with https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg or a local thumbnail.
-- Upload a GIF for looping playback or attach an MP4 via GitHub's Markdown editor for supported inline playback.
-- Verify actual motor-driver model (L298N assumed), GPIOs, gains, calibration, Wi-Fi and loop frequency against firmware.
-- Confirm which features are implemented; remove or revise unimplemented claims.
-- Update the repository tree, dependencies, test results and roadmap.
-- Choose a license and review all photographs, videos and source files for private information before publishing.
--->
-

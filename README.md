@@ -75,8 +75,6 @@ flowchart LR
     F -. Telemetry .-> C
 ```
 
-The feedback loop runs on the ESP32. The browser provides a supervisory interface rather than executing the balance controller. The architecture above describes the intended functional design; actual scheduling and timing must be verified against the firmware.
-
 ## Hardware
 
 ### Bill of materials
@@ -108,34 +106,6 @@ The following is the working pin map carried forward from the earlier developmen
 | L298N | IN4 | 33 | Motor B direction |
 | L298N | ENB | 14 | Motor B PWM enable |
 
-### Electrical connection overview
-
-```mermaid
-flowchart TB
-    S[Motor power supply] --> D[L298N module]
-    L[Regulated logic supply] --> E[ESP32]
-    E -->|GPIO 21 / 22 - I2C| I[MPU6500]
-    E -->|PWM and direction GPIOs| D
-    D --> A[Left motor]
-    D --> B[Right motor]
-    G[Common ground] --- E
-    G --- D
-    G --- I
-    G --- S
-    G --- L
-```
-
-*Functional connection diagram, not a complete electrical schematic.*
-
-- Ensure all logic and motor supply grounds share a suitable common reference.
-- Verify the MPU6500 breakout's supply requirements and ensure I²C pull-ups are compatible with 3.3 V ESP32 logic.
-- Remove ENA/ENB jumpers if required by the L298N module when using external PWM signals.
-- Verify motor stall current, supply voltage, driver thermal limits and voltage drop before applying power. GA25-370 motors exist in multiple variants.
-- Do not connect motor supply voltage directly to an ESP32 GPIO or 3.3 V rail. Check the L298N module's regulator jumper configuration before connecting logic power.
-
-<!-- Upload a verified wiring schematic to assets/diagrams/wiring.png and uncomment:
-![Electrical wiring schematic](assets/diagrams/wiring.png)
--->
 
 ## Control System
 

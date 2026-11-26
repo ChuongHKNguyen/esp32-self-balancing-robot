@@ -58,20 +58,6 @@ For a short looping demonstration, upload assets/media/balance-demo.gif and unco
 For inline MP4 playback, edit this README on GitHub, drag the MP4 into the editor, and retain the generated attachment URL here.
 -->
 
-### Prototype gallery
-
-<!-- Replace placeholder URLs with your own photographs. -->
-<table>
-  <tr>
-    <td align="center"><img src="https://placehold.co/600x420/243447/E2E8F0.png?text=Front+View" alt="Front view placeholder" width="390"><br><sub>Front view</sub></td>
-    <td align="center"><img src="https://placehold.co/600x420/243447/E2E8F0.png?text=Rear+View" alt="Rear view placeholder" width="390"><br><sub>Rear view</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="https://placehold.co/600x420/243447/E2E8F0.png?text=Electronics" alt="Electronics placeholder" width="390"><br><sub>Electronics and wiring</sub></td>
-    <td align="center"><img src="https://placehold.co/600x420/243447/E2E8F0.png?text=Web+Dashboard" alt="Dashboard placeholder" width="390"><br><sub>Wireless monitoring and tuning interface</sub></td>
-  </tr>
-</table>
-
 ## Key Features
 
 - ESP32-based embedded control using Arduino C/C++.

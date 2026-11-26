@@ -236,40 +236,6 @@ The embedded web interface is intended to display orientation readings and provi
 
 Confirm the network settings in the actual sketch. Change the default password before use in shared environments. The dashboard should not be treated as a safety-critical emergency-stop interface.
 
-## Repository Structure
-
-The following is the proposed layout. Add the firmware and supporting assets before treating this as the actual repository tree.
-
-```text
-esp32-self-balancing-robot/
-├── README.md
-├── firmware/
-│   └── self_balancing_robot/
-│       └── self_balancing_robot.ino
-├── hardware/
-│   ├── wiring.md
-│   └── bill_of_materials.md
-├── assets/
-│   ├── images/
-│   │   ├── robot-hero.jpg
-│   │   ├── robot-front.jpg
-│   │   ├── robot-rear.jpg
-│   │   ├── electronics.jpg
-│   │   ├── dashboard.png
-│   │   └── demo-thumbnail.jpg
-│   ├── diagrams/
-│   │   └── wiring.png
-│   └── media/
-│       └── balance-demo.gif
-├── docs/
-│   ├── control-design.md
-│   └── testing.md
-├── tests/
-│   └── data/
-└── .gitignore
-```
-
-The Arduino sketch folder and `.ino` filename should match. Add a `LICENSE` file once a license has been selected.
 
 ## Getting Started
 

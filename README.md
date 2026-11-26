@@ -148,22 +148,6 @@ The signed control output is mapped to motor direction and PWM magnitude, subjec
 
 These are historical development settings, not validated optimal gains. Their effective units and PWM scale depend on the final implementation. Confirm values against the current firmware before use.
 
-### Firmware workflow
-
-```mermaid
-flowchart TD
-    A[Power on] --> B[Initialize peripherals and outputs]
-    B --> C[Calibrate stationary IMU]
-    C --> D[Start Wi-Fi and web interface]
-    D --> E[Read accelerometer and gyroscope]
-    E --> F[Estimate tilt and calculate error]
-    F --> G[Compute PID output]
-    G --> H[Apply output limits and motor commands]
-    H --> I[Update telemetry]
-    I --> E
-```
-
-*Conceptual firmware workflow. Safe-start gating, IMU fault handling and fall detection should be verified or added before untethered testing.*
 
 ## Web Dashboard
 
@@ -194,8 +178,6 @@ Confirm the network settings in the actual sketch. Change the default password b
 - USB data cable and appropriate USB-to-serial driver, if required by the development board.
 - Any additional IMU or networking libraries imported by the final sketch.
 
-The exact ESP32 board package version and external library dependencies must be recorded after the final firmware is uploaded. ESP32 Arduino core versions can differ in their PWM APIs.
-
 ### Installation
 
 1. Clone or download the repository from GitHub. After publishing, replace `YOUR_GITHUB_USERNAME` in the example below:
@@ -222,30 +204,6 @@ The exact ESP32 board package version and external library dependencies must be 
 5. Tune proportional gain gradually, then derivative gain to improve damping. Introduce integral action only if necessary and with appropriate anti-windup protection.
 6. Verify motor cutoff behavior, sensor fault response and output limits before attempting free-standing balance.
 7. Perform controlled balancing trials in a clear area with a suitable support or restraint.
-
-## Testing and Validation
-
-The following test plan is proposed to document the prototype's behavior reproducibly. Results have not been supplied and are deliberately left unreported.
-
-| Test | Metric / acceptance criterion | Result |
-|---|---|---|
-| IMU stationary calibration | Mean tilt offset and gyro bias | Pending documentation |
-| Orientation estimation | Response and drift at known orientations | Pending documentation |
-| Motor direction | Correct corrective direction for both tilt signs | Pending documentation |
-| Control-loop timing | Mean frequency, jitter and missed deadlines | Pending documentation |
-| Static balancing | Duration, RMS tilt error and peak deviation | Pending documentation |
-| Disturbance rejection | Recovery time and maximum tilt | Pending documentation |
-| Dashboard load | Control timing with active browser clients | Pending documentation |
-| Fault handling | Motor shutdown on invalid IMU data or excessive tilt | Pending documentation |
-
-### Performance results
-
-<!-- Replace with measured plots and results. Do not report simulated or estimated values as experimental measurements. -->
-<p align="center">
-  <img src="https://placehold.co/1000x450/243447/E2E8F0.png?text=Experimental+Results%0ATilt+Angle+vs+Time" alt="Experimental plot placeholder — no measured data" width="800">
-</p>
-
-*Placeholder for measured tilt-angle time series. Include the target angle, PID gains, sampling rate, test conditions and units when publishing results.*
 
 ## Engineering Considerations and Limitations
 

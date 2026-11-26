@@ -35,8 +35,6 @@
 
 This project develops a two-wheeled self-balancing robot based on the ESP32 microcontroller. An MPU6500 inertial measurement unit (IMU) provides accelerometer and gyroscope measurements for estimating the robot's tilt. A proportional–integral–derivative (PID) controller calculates corrective motor commands, which are applied through a dual H-bridge motor driver. An ESP32-hosted web dashboard supports wireless monitoring and controller tuning during development.
 
-> **Project status:** Prototype under development. Stable balancing performance, disturbance rejection and operating limits have not yet been quantitatively documented in this repository.
-
 ## Demonstration
 
 ### Robot operation

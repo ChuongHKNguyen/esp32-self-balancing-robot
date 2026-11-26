@@ -40,7 +40,7 @@ This project develops a two-wheeled self-balancing robot based on the ESP32 micr
 ### Robot operation
 
 <!-- Replace BOTH occurrences of YOUR_VIDEO_ID with the YouTube video ID. Alternatively, use a locally uploaded thumbnail as the image source. -->
-[![Watch the self-balancing robot demonstration](https://www.youtube.com/shorts/msnDinaH7lM?feature=share)](https://www.youtube.com/shorts/msnDinaH7lM?feature=shareD)
+[![Self-Balancing Robot Demonstration](https://img.youtube.com/vi/msnDinaH7lM/hqdefault.jpg)](https://www.youtube.com/shorts/msnDinaH7lM)
 
 *Click the thumbnail to watch the full demonstration on YouTube once the video is published.*
 

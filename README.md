@@ -244,10 +244,16 @@ Robotics and Mechatronics Engineering
 <!-- Replace the placeholders and remove any links you do not want to publish. -->
 [GitHub](https://github.com/YOUR_GITHUB_USERNAME) · [LinkedIn](https://www.linkedin.com/in/YOUR_LINKEDIN_ID/) · [YouTube](https://www.youtube.com/@YOUR_CHANNEL)
 
+
 ## License
 
-A project license has not yet been selected. Add the appropriate `LICENSE` file before granting reuse permissions. Third-party dependencies remain subject to their respective licenses.
+This project is free and open-source software released under the
+[MIT License](LICENSE).
 
----
+You are free to use, modify, distribute, and build upon this project
+for personal, academic, or commercial purposes, provided that the
+original copyright and license notice are retained.
 
-<p align="center"><sub>Designed and developed as a hands-on investigation of embedded robotic stabilization.</sub></p>
+Third-party dependencies remain subject to their respective licenses.
+
+

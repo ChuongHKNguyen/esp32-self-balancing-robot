@@ -62,30 +62,29 @@ This project develops a two-wheeled self-balancing robot based on the ESP32 micr
 
 ```mermaid
 flowchart TD
-    A[Upright angle<br/>reference]
-    B((Error))
-    C[PID<br/>controller]
-    D[L298N motor<br/>driver]
-    E[GA25-370<br/>motors]
-    F[Robot<br/>dynamics]
-    G[MPU6500 IMU]
-    H[Orientation<br/>estimation]
+    subgraph S1["ESP32 — Control System"]
+        direction LR
+        A[Upright angle reference] --> B((Error))
+        B --> C[PID controller]
+        H[Orientation estimation] -->|Negative feedback| B
+    end
 
-    I[Web dashboard]
-    J[Wi-Fi telemetry<br/>& tuning]
+    subgraph S2["Physical System"]
+        direction LR
+        D[L298N motor driver] --> E[GA25-370 motors]
+        E --> F[Robot dynamics]
+        F --> G[MPU6500 IMU]
+    end
 
-    A --> B
-    H --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> G
-    G --> H
+    subgraph S3["Supervisory Interface"]
+        direction LR
+        I[ESP32 Wi-Fi] <-->|Telemetry and tuning| J[Web dashboard]
+    end
 
-    I --> J
-    J --> C
-    H --> J
+    C -->|PWM| D
+    G -->|I2C| H
+    H -.->|Telemetry| I
+    I -.->|PID gain updates| C
 ```
 
 
